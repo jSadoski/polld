@@ -1,0 +1,27 @@
+[tool.poetry]
+authors = ["Joe Sadoski <jdsadoski@gmail.com>"]
+description = ""
+name = "polld"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+aiodns = {version = "^3.0.0", optional = true}
+aiofiles = "^0.7.0"
+aiohttp = "^3.7.4"
+cchardet = {version = "^2.1.7", optional = true}
+python = "^3.8"
+python-decouple = "^3.4"
+
+[tool.poetry.dev-dependencies]
+black = "^21.7b0"
+codespell = "^2.1.0"
+flake8 = "^3.9.2"
+pylint = "^2.9.6"
+pytest = "^5.2"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[flake8]
+max-line-length = 88
