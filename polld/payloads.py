@@ -2,10 +2,6 @@ import sys
 import discord_opcodes as opcode
 
 
-def gateway_dispatch(data: dict, sequence_number: int, event_name: str):
-    return {"op": opcode.DISPATCH, "d": data, "s": sequence_number, "t": event_name}
-
-
 def heartbeat(last_sequence_number: int = None):
     return {
         "op": opcode.HEARTBEAT,
@@ -40,3 +36,11 @@ def identify(token: str):
             "intents": 21,
         },
     }
+
+
+def gateway_dispatch(data: dict, sequence_number: int, event_name: str):
+    return {"op": opcode.DISPATCH, "d": data, "s": sequence_number, "t": event_name}
+
+
+def gateway_resume(token: str, session_id: str, seq: int):
+    return {"token": token, "session_id": session_id, "seq": seq}
